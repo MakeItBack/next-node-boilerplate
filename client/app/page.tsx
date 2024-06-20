@@ -69,16 +69,14 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none"></div>
-      </div>
+    <main className="flex min-h-screen flex-col items-center p-24">
+      <div>
+        <h1 className="mb-8">App Name</h1>
 
-      <div className="">
-        <h2>Current Issues</h2>
+        <h2 className="mb-4">Current Items</h2>
 
         {allIssues && (
-          <ul>
+          <ul className="mb-8">
             {allIssues.map((issue) => (
               <li>
                 [{issue.id}] - {issue.title}
@@ -87,11 +85,12 @@ export default function Home() {
           </ul>
         )}
 
-        <h2>Manage Issues</h2>
+        <h2>Manage Items</h2>
         <input type="text" value={id} onChange={handleInputChange} placeholder="Enter ID" />
         <button onClick={handleView}>View</button>
+
         <button onClick={handleDelete}>Delete</button>
-        <div>
+        <div className="mb-12">
           <input
             type="text"
             value={updateData}
@@ -109,13 +108,11 @@ export default function Home() {
 
         {data && (
           <div>
-            <h2>Data for Issue #{id}</h2>
+            <h2 className="mb-4">Data for Issue #{id}</h2>
             {`${data.title} | ${data.description}`}
           </div>
         )}
       </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left"></div>
     </main>
   );
 }
