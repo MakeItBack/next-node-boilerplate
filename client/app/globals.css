@@ -7,26 +7,19 @@ Open the CSS file where you import Tailwind CSS - Press Shift + P and search for
 Change language setting in VSCode - Inside the search bar, type “tailwindcss” and select it.*/
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  --foreground: #000;
+  --background: #ddd;
+  font-size: 16px;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb)))
-    rgb(var(--background-start-rgb));
+  color: var(--foreground);
+  background: var(--background);
 }
+
 h1 {
   font-size: 3rem;
+  color: green;
 }
 h2 {
   font-size: 2rem;
@@ -43,16 +36,11 @@ h5 {
 }
 
 button,
-input {
-  border: 1px solid black;
+input,
+select {
+  border: 1px solid #707070;
   border-radius: 5px;
   padding: 5px;
   min-width: 100px;
   margin: 5px;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
 }
