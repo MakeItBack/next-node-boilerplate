@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { Issue } from "@/app/types";
+import Popup from "@/app/popup";
 
 export default function Home() {
   const [allIssues, setAllIssues] = useState<Issue[] | []>([]);
@@ -74,7 +75,7 @@ export default function Home() {
         <h1 className="mb-8">App Name</h1>
 
         <h2 className="mb-4">Current Items</h2>
-
+        <Popup />
         {allIssues && (
           <ul className="mb-8">
             {allIssues.map((issue) => (

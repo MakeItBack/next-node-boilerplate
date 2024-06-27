@@ -37,6 +37,7 @@ h5 {
 
 button,
 input,
+dialog,
 select {
   border: 1px solid #707070;
   border-radius: 5px;
