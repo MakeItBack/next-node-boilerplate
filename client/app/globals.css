@@ -1,10 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* To fix “Unknown at rule @tailwind” warning, start by installing Tailwind CSS IntelliSense plugin.
-When that is done, you need to associate your CSS file with Tailwind CSS in VS Code.
-Open the CSS file where you import Tailwind CSS - Press Shift + P and search for “change language mode”
-Change language setting in VSCode - Inside the search bar, type “tailwindcss” and select it.*/
+/*
+To fix “Unknown at rule @tailwind” warning:
+Install Tailwind CSS IntelliSense plugin then associate your CSS file with Tailwind CSS in VS Code.
+ - Create association in .vscode/settings.json
+ - Open the CSS file where you import Tailwind CSS - Press Shift + P and search for “change language mode”
+Change language setting in VSCode - Inside the search bar, type “tailwindcss” and select it.
+*/
 
 :root {
   --foreground: #000;
