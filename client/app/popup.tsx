@@ -1,9 +1,21 @@
+import { useRef, useState } from "react";
+
 export default function Modal() {
+  const modalRef = useRef<HTMLDialogElement>(null);
+
+  modalRef.current?.showModal();
+
+  function closeModal(e: any) {
+    if (modalRef.current) {
+      modalRef.current.close();
+    }
+  }
+
   return (
-    <dialog open className="fixed top-1/3 left-1/3 bg-orange-300 p-16 text-center">
+    <dialog ref={modalRef} className="mx-auto my-auto p-16 text-center dialog-backdrop ">
       <p>Greetings, one and all!</p>
       <form method="dialog">
-        <button>OK</button>
+        <button onClick={closeModal}>OK</button>
       </form>
     </dialog>
   );
